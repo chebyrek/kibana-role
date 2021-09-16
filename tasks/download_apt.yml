@@ -1,0 +1,13 @@
+---
+- name: "Download Kibana's deb"
+  get_url:
+    url: "https://artifacts.elastic.co/downloads/kibana/kibana-{{ version }}-x86_64.deb"
+    dest: "files/kibana-{{ version }}-x86_64.deb"
+  register: download_kibana
+  until: download_kibana is succeeded
+  when: install_type == 'remote'
+- name: Copy Kibana's deb to managed node
+  copy:
+    src: "files/kibana-{{ version }}-x86_64.deb"
+    mode: 0644
+    dest: "/tmp/kibana-{{ version }}-x86_64.deb"

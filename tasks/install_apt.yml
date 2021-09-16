@@ -1,0 +1,7 @@
+---
+- name: Install Kibana
+      become: true
+      apt:
+        name: "/tmp/kibana-{{ version }}-x86_64.deb"
+        state: present
+      notify: restart Kibana

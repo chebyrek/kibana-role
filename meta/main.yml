@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Nikolay Chepurnenko
+  description: install Kibana
+  company: mycompany
+
+  license: MIT
+
+  min_ansible_version: 2.9
+  
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: CentOS
+      versions:
+        - all
+  
